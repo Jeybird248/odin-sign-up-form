@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="image-container">
+            <img src="image.gif">
+        </div>
+        <div id="form-container">
+            <div id="header">
+                <h1>우 나 핫걸~<br>좋은 거 보고 갈래?</h1>
+            </div>
+            <form id="myForm" action="example.com/path" method="post">
+                <div id="form">
+                    <div class="grid-item">
+                        <label for="first_name">First Name:</label>
+                        <input id="first_name" type="text" placeholder="Woo" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="last_name">Last Name:</label>
+                        <input id="last_name" type="text" placeholder="Wakgood" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="email">Email:</label>
+                        <input id="email" type="email" placeholder="wak@ent.com" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="phone_number">Phone Number:</label>
+                        <input id="phone_number" type="text" placeholder="010-123-1234" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="password">Password:</label>
+                        <input id="password" type="password" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input id="confirm_password" type="password" required>
+                    </div>
+                    <button type="submit">Submit Form</button>
+                </div>
+                
+            </form>
+            
+            <div id="footer">
+                <!-- Add any additional content or buttons in the footer if needed -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        // Prevent the form from submitting by default
+        event.preventDefault();
+
+        // Perform your custom validation
+        if(validateForm()) {
+            // If validation passes, submit the form
+            this.submit();
+        } else {
+            // If validation fails, handle it accordingly (e.g., display error messages)
+            alert('Please fill out the form correctly.');
+        }
+    });
+
+    function validateForm() {
+        // Add your specific validation logic here
+        // For example, you can check if the passwords match
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm_password').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return false;
+        }
+
+        // You can add more validation checks for other fields as needed
+
+        // If all validation checks pass, return true
+        return true;
+    }
+</script>
+
+
+</html>
